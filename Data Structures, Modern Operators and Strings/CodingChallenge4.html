@@ -1,0 +1,42 @@
+<!-- // Coding Challenge #4
+// Write a program that receives a list of variable names written in underscore_case 
+// and convert them to camelCase.
+// The input will come from a textarea inserted into the DOM (see code below to 
+// insert the elements), and conversion will happen when the button is pressed.
+// Test data (pasted to textarea, including spaces):
+// underscore_case
+// first_name
+// Some_Variable 
+//  calculate_AGE
+// delayed_departure -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container" style="width: 100%; height: 60px; display: flex; justify-content:center">
+        <textarea name="" id="textArea" style="width: 200px;" placeholder="type something"></textarea>
+        <button style="width: 50px;" onclick="change()">Button</button>
+    </div>
+    <script>
+        let change=()=>{
+            let dem=0;
+            let tArea=document.getElementById('textArea');
+            tArea.value.toLowerCase().split("\n").map(value=>{
+                let log='';
+                dem++;
+                value.trim().split("_").map((x,index)=>{
+                    log+=index===0?x:x.charAt(0).toUpperCase()+x.slice(1);
+                })
+                let check='';
+                for(let i=0;i<dem;i++)
+                    check+='V';
+                console.log(log+'\t'+check);
+            });
+        }
+    </script>
+</body>
+</html>
