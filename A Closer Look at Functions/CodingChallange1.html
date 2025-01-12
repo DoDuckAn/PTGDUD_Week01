@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CC1</title>
+  
+</head>
+<body>
+
+  <h1>What is your favourite programming language?</h1>
+
+  <div>
+    <button onclick="selectOption(0)">JS</button>
+    <button onclick="selectOption(1)">Python</button>
+    <button onclick="selectOption(2)">Rust</button>
+    <button onclick="selectOption(3)">C++</button>
+  </div>
+
+  <div>
+    <button onclick="displayOption()">Display</button>
+  </div>
+
+  <script>
+    let selectedOption = null;
+    var answers=[0,0,0,0];
+    function selectOption(option) {
+      answers[option]++;
+    }
+
+    // Hàm Display
+    function displayOption() {
+      console.log(answers);
+    }
+  </script>
+
+</body>
+</html>
